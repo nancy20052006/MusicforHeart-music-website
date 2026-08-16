@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up - MusicforHeart</title>
+
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+<link rel="stylesheet" href="page.css">
+
+
+</head>
+
+<body>
+
+
+<div class="auth-page signup-page">
+
+    <div class="logo">
+    <img src="my-logo.png" alt="My Logo">
+        <span>MusicforHeart</span>
+    </div>
+
+    <div class="signup-card">
+
+        <h1>Create your account</h1>
+
+        <p class="signup-subtitle">
+            Join Spotify and start listening to your favorite music.
+        </p>
+
+        <form id="signupForm">
+
+            <label>Email address</label>
+            <input type="email" id="email" placeholder="name@example.com" required>
+
+            <label>Password</label>
+
+            <div class="password-box">
+                <input type="password" id="signupPassword" placeholder="Create a password" required>
+                <i class="fa-regular fa-eye" id="showSignupPassword"></i>
+            </div>
+
+            <label>Display name</label>
+            <input type="text" placeholder="Enter your name" required>
+
+            <label>Date of birth</label>
+            <input type="date" required>
+
+            <label>Gender</label>
+
+            <div class="gender-options">
+                <label>
+                    <input type="radio" name="gender" required>
+                    Male
+                </label>
+
+                <label>
+                    <input type="radio" name="gender">
+                    Female
+                </label>
+
+                <label>
+                    <input type="radio" name="gender">
+                    Other
+                </label>
+            </div>
+
+            <div class="terms">
+                <input type="checkbox" required>
+                <span>
+                    I agree to the Spotify
+                    <a href="#">Terms and Conditions</a>.
+                </span>
+            </div>
+
+            <button type="submit" class="green-btn">
+                Create Account
+            </button>
+
+        </form>
+
+        <div class="auth-bottom">
+            <span>Already have an account?</span>
+            <a href="login.html">Log in</a>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    const signupPassword = document.getElementById("signupPassword");
+    const showSignupPassword = document.getElementById("showSignupPassword");
+
+    showSignupPassword.addEventListener("click", () => {
+        if (signupPassword.type === "password") {
+            signupPassword.type = "text";
+            showSignupPassword.classList.replace("fa-eye", "fa-eye-slash");
+        } else {
+            signupPassword.type = "password";
+            showSignupPassword.classList.replace("fa-eye-slash", "fa-eye");
+        }
+    });
+
+    document.getElementById("signupForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("Account created successfully! (Demo)");
+    });
+</script>
+
+</body>
+
+</html>

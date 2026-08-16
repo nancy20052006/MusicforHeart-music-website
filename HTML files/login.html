@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in - MusicforHeart</title>
+
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+<link rel="stylesheet" href="page.css">
+
+
+</head>
+
+<body>
+
+<div class="auth-page">
+
+    <div class="auth-logo">
+    <img src="my-logo.png" alt="My Logo">
+    <span>MusicforHeart</span>
+</div>
+
+    <div class="login-card">
+
+        <h1>Log in to Spotify</h1>
+
+        <button class="social-btn">
+            <i class="fa-brands fa-google"></i>
+            Continue with Google
+        </button>
+
+        <button class="social-btn">
+            <i class="fa-brands fa-facebook"></i>
+            Continue with Facebook
+        </button>
+
+        <button class="social-btn">
+            <i class="fa-brands fa-apple"></i>
+            Continue with Apple
+        </button>
+
+        <div class="divider">
+            <span>or</span>
+        </div>
+
+        <form id="loginForm">
+
+            <label>Email or username</label>
+            <input type="text" id="loginEmail" placeholder="Email or username" required>
+
+            <label>Password</label>
+
+            <div class="password-box">
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <i class="fa-regular fa-eye" id="showLoginPassword"></i>
+            </div>
+
+            <a href="#" class="forgot-password">Forgot your password?</a>
+
+            <button type="submit" class="green-btn">Log In</button>
+
+        </form>
+
+        <div class="auth-bottom">
+            <span>Don't have an account?</span>
+            <a href="signup.html">Sign up for Spotify</a>
+        </div>
+
+    </div>
+
+    <p class="copyright">
+        This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+    </p>
+
+</div>
+
+<script>
+    const password = document.getElementById("loginPassword");
+    const showPassword = document.getElementById("showLoginPassword");
+
+    showPassword.addEventListener("click", () => {
+        if (password.type === "password") {
+            password.type = "text";
+            showPassword.classList.replace("fa-eye", "fa-eye-slash");
+        } else {
+            password.type = "password";
+            showPassword.classList.replace("fa-eye-slash", "fa-eye");
+        }
+    });
+
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("Login successful! (Demo)");
+    });
+</script>
+
+</body>
+
+</html>

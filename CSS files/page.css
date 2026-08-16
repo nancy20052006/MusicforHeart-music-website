@@ -1,0 +1,1304 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: pink;
+    color: rgb(158, 46, 65);
+    font-family: "Montserrat", sans-serif;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* =========================================
+   COMMON NAVBAR
+========================================= */
+
+.simple-nav {
+    width: 100%;
+    height: 4rem;
+    background-color: pink;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 1.2rem;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    margin: 0.8rem 10rem;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.simple-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.simple-nav-links a {
+    text-decoration: none;
+    color: rgb(175, 72, 89);
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.simple-nav-links a:hover {
+    color: white;
+    transform: scale(1.04);
+}
+
+.simple-nav-links .nav-login {
+    background-color: white;
+    color: rgb(158, 46, 65);
+
+    padding: 0.9rem 1.6rem;
+    border-radius: 20rem;
+
+    transition: 0.2s;
+}
+
+.simple-nav-links .nav-login:hover {
+    color: rgb(158, 46, 65);
+    transform: scale(1.05);
+}
+
+
+/* =========================================
+   LOGIN + SIGNUP PAGE
+========================================= */
+
+.auth-page {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at top,  0%, rgb(223, 128, 143) 35%, rgb(194, 124, 136) 75%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 2rem 1rem;
+}
+
+.auth-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgb(179, 60, 79);
+    font-size: 1.8rem;
+    font-weight: 700;
+
+    margin-bottom: 1.5rem;
+}
+
+.auth-logo img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+
+/* Login Card */
+
+.login-card,
+.signup-card {
+    width: 100%;
+    max-width: 450px;
+
+    background-color: pink;
+
+    border-radius: 10px;
+
+    padding: 2.5rem 3rem;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.signup-card {
+    max-width: 500px;
+}
+
+.login-card h1,
+.signup-card h1 {
+    text-align: center;
+
+    font-size: 1.8rem;
+
+    margin-bottom: 2rem;
+}
+
+.signup-subtitle {
+    color: rgb(158, 46, 65);
+
+    text-align: center;
+
+    font-size: 0.9rem;
+    line-height: 1.5;
+
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
+}
+
+
+/* Social Buttons */
+
+.social-btn {
+    width: 100%;
+
+    background-color: rgb(228, 106, 126);
+    color: white;
+
+    border: 1px solid rgb(228, 106, 126);
+
+    border-radius: 20rem;
+
+    padding: 0.8rem;
+
+    margin-bottom: 0.7rem;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.social-btn:hover {
+    border-color: white;
+    transform: scale(1.02);
+    background-color: rgb(179, 60, 79);
+    color: white;
+}
+
+.social-btn i {
+    margin-right: 0.5rem;
+}
+
+
+/* Divider */
+
+.divider {
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+
+    color: rgb(179, 60, 79);
+
+    margin: 1.8rem 0;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background-color: rgb(179, 60, 79);
+}
+
+
+/* Form */
+
+.login-card label,
+.signup-card label {
+    display: block;
+
+    color: rgb(179, 60, 79);
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    margin: 1rem 0 0.5rem;
+}
+
+.login-card input,
+.signup-card input[type="text"],
+.signup-card input[type="email"],
+.signup-card input[type="date"] {
+    width: 100%;
+
+    background-color: pink;
+
+    border: 1px solid rgb(228, 112, 132);
+
+    border-radius: 5px;
+
+    color: white;
+
+    padding: 0.85rem;
+
+    outline: none;
+
+    font-family: "Montserrat", sans-serif;
+}
+
+.login-card input:focus,
+.signup-card input:focus {
+    border-color: white;
+}
+
+
+/* Password */
+
+.password-box {
+    position: relative;
+}
+
+.password-box input {
+    padding-right: 3rem;
+}
+
+.password-box i {
+    position: absolute;
+
+    right: 1rem;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: rgb(179, 60,79);
+
+    cursor: pointer;
+}
+
+.password-box i:hover {
+    color: white;
+}
+
+
+/* Forgot Password */
+
+.forgot-password {
+    display: inline-block;
+
+    
+
+    margin: 1.2rem 0;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    text-decoration: underline;
+}
+
+
+/* Green Button */
+
+.green-btn {
+    width: 100%;
+
+    border: none;
+
+    background-color: rgb(228,106,126);
+    color: rgb(129, 41, 56);
+
+    padding: 0.9rem;
+
+    border-radius: 20rem;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.green-btn:hover {
+    background-color: white;
+
+    transform: scale(1.03);
+}
+
+
+/* Bottom */
+
+.auth-bottom {
+    border-top: 1px solid rgb(228,106,126);
+
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+
+    text-align: center;
+
+    color: rgb(179, 60, 79);
+
+    font-size: 0.85rem;
+}
+
+.auth-bottom a {
+    color: rgb(179, 60, 79);
+
+    font-weight: 600;
+
+    margin-left: 5px;
+}
+
+.auth-bottom a:hover {
+    color: white;
+}
+
+
+/* Signup */
+
+.gender-options {
+    display: flex;
+
+    gap: 1.5rem;
+
+    margin: 0.7rem 0 1.2rem;
+}
+
+.gender-options label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    margin: 0;
+
+    color: white;
+}
+
+.gender-options input {
+    accent-color: rgb(228,106,126);
+}
+
+.terms {
+    display: flex;
+
+    gap: 0.6rem;
+
+    align-items: flex-start;
+
+    margin: 1.5rem 0;
+
+    color: white;
+
+    font-size: 0.75rem;
+
+    line-height: 1.5;
+}
+
+.terms input {
+    accent-color: rgb(228,106,126);
+
+    margin-top: 3px;
+}
+
+.terms a {
+    color: white;
+}
+
+
+/* =========================================
+   PREMIUM PAGE
+========================================= */
+
+.premium-page {
+    background-color: pink;
+
+    min-height: 100vh;
+}
+
+
+/* Hero */
+
+.premium-hero {
+    min-height: 430px;
+
+    background-color: #dd6a98;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 4rem 1.5rem;
+}
+
+.premium-hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+
+    font-weight: 800;
+
+    margin-bottom: 1rem;
+}
+
+.premium-hero p {
+    max-width: 650px;
+
+    font-size: 1.1rem;
+
+    line-height: 1.6;
+
+    margin-bottom: 2rem;
+}
+
+.hero-green-btn {
+    background-color: white;
+
+    color: rgb(179,60,79);
+
+    text-decoration: none;
+
+    padding: 0.9rem 1.7rem;
+
+    border-radius: 20rem;
+
+    font-weight: 700;
+
+    transition: 0.2s;
+}
+
+.hero-green-btn:hover {
+    transform: scale(1.05);
+}
+
+
+/* Plans */
+
+.plans-section {
+    padding: 4rem 5%;
+
+    text-align: center;
+}
+
+.plans-section h2,
+.premium-features h2 {
+    font-size: 2rem;
+
+    margin-bottom: 0.7rem;
+}
+
+.section-subtitle {
+    color: rgb(179, 60, 79);
+
+    margin-bottom: 2.5rem;
+}
+
+.plans {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: stretch;
+
+    gap: 1.3rem;
+
+    flex-wrap: wrap;
+}
+
+.plan-card {
+    width: 310px;
+
+    min-height: 470px;
+
+    background-color: rgb(228, 106, 126);
+
+    border-radius: 10px;
+
+    padding: 2rem;
+
+    text-align: left;
+
+    position: relative;
+
+    transition: 0.3s;
+}
+
+/* .plan-card:hover {
+    background-color: white;
+
+    transform: translateY(-8px);
+} */
+
+.plan-tag {
+    display: inline-block;
+
+    background-color: rgb(179, 60, 79);
+
+    color: black;
+
+    padding: 0.35rem 0.7rem;
+
+    border-radius: 20rem;
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+}
+
+.plan-card h3 {
+    font-size: 1.3rem;
+
+    margin: 1.4rem 0 0.6rem;
+}
+
+.plan-description {
+    color: white;
+
+    font-size: 0.85rem;
+
+    min-height: 40px;
+}
+
+.price {
+    font-size: 1.8rem;
+
+    font-weight: 700;
+
+    margin: 1.5rem 0;
+
+}
+
+.price span {
+    color: white;
+
+    font-size: 0.75rem;
+
+    font-weight: 400;
+}
+
+.plan-card hr {
+    border: none;
+
+    border-top: 1px solid rgb(179, 60, 79);
+}
+
+.plan-card ul {
+    list-style: none;
+
+    margin: 1.5rem 0;
+}
+
+.plan-card li {
+    margin: 0.8rem 0;
+
+    font-size: 0.8rem;
+
+    color: white;
+}
+
+.plan-card li i {
+    color: rgb(179, 60, 79);
+
+    margin-right: 0.5rem;
+}
+
+.plan-btn {
+    width: 100%;
+
+    padding: 0.8rem;
+
+    border: none;
+
+    border-radius: 20rem;
+
+    background-color: rgb(179, 60, 79);
+
+    color: black;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.plan-btn:hover {
+    background-color: white;
+
+    transform: scale(1.03);
+}
+
+
+/* Premium Features */
+
+.premium-features {
+    background-color: #dd6a98;
+
+    padding: 4rem 5%;
+
+    text-align: center;
+}
+
+.feature-grid {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 2rem;
+
+    flex-wrap: wrap;
+
+    margin-top: 3rem;
+}
+
+.feature-grid > div {
+    width: 220px;
+
+    padding: 1.5rem;
+
+    background-color: rgb(228, 106, 126);
+
+    border-radius: 10px;
+
+    transition: 0.2s;
+}
+
+.feature-grid > div:hover {
+    background-color: rgb(175, 72, 89);
+
+    transform: translateY(-5px);
+}
+
+.feature-grid i {
+    color: white;
+
+    font-size: 2rem;
+
+    margin-bottom: 1rem;
+}
+
+.feature-grid h3 {
+    margin-bottom: 0.7rem;
+}
+
+.feature-grid p {
+    color: white;
+
+    font-size: 0.8rem;
+
+    line-height: 1.5;
+}
+.page-footer{
+    background-color: #dd6a98;
+    color: white;
+}
+
+/* =========================================
+   SUPPORT PAGE
+========================================= */
+
+.support-page {
+    min-height: 100vh;
+
+    background-color: #bd4273;
+
+    color: white;
+}
+
+
+/* Support Hero */
+
+.support-hero {
+    background-color:#dd6a98;
+        
+
+    padding: 5rem 1.5rem;
+
+    text-align: center;
+
+    border-bottom: 1px solid rgb(228, 106, 126);
+}
+
+.support-hero h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+
+    margin-bottom: 2rem;
+}
+
+.support-search {
+    max-width: 650px;
+
+    margin: auto;
+
+    background-color: rgb(179,60,79);
+
+    border: 1px solid white;
+
+    border-radius: 30px;
+
+    padding: 1rem 1.2rem;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.8rem;
+
+    transition: 0.2s;
+}
+
+.support-search:focus-within {
+    border-color: white;
+
+    background-color: rgb(201, 87, 106);
+}
+
+.support-search i {
+    color: white;
+}
+
+.support-search input {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 0.95rem;
+}
+
+.support-search input::placeholder {
+    color: white;
+}
+
+
+/* Help Section */
+
+.help-section,
+.faq-section {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 4rem 1.5rem;
+}
+
+.help-section h2,
+.faq-section h2 {
+    font-size: 1.8rem;
+
+    margin-bottom: 2rem;
+}
+
+.help-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1rem;
+}
+
+.help-card {
+    background-color: rgb(179,60,79);
+
+    padding: 1.7rem;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.help-card:hover {
+    background-color: rgb(179, 60, 79);
+
+    transform: translateY(-5px);
+}
+
+.help-card i {
+    color: white;
+
+    font-size: 1.5rem;
+
+    margin-bottom: 1rem;
+}
+
+.help-card h3 {
+    font-size: 1rem;
+
+    margin-bottom: 0.6rem;
+}
+
+.help-card p {
+    color: white;
+
+    font-size: 0.75rem;
+
+    line-height: 1.5;
+}
+
+
+/* FAQ */
+
+.faq-section {
+    background-color: #dd6a98;
+}
+
+.faq {
+    background-color: #bd4273;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.faq-item {
+    border-bottom: 1px solid rgb(179, 60, 79);
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-item button {
+    width: 100%;
+
+    border: none;
+
+    background-color: transparent;
+
+    color: white;
+
+    padding: 1.3rem;
+
+    text-align: left;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.faq-item button:hover {
+    background-color: #bd4273;
+}
+
+.faq-item button i {
+    transition: 0.2s;
+}
+
+.faq-item p {
+    display: none;
+
+    color: white;
+
+    padding: 0 1.3rem 1.3rem;
+
+    font-size: 0.8rem;
+
+    line-height: 1.6;
+}
+
+.faq-item.active p {
+    display: block;
+}
+
+.faq-item.active button i {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================
+   DOWNLOAD PAGE
+========================================= */
+
+.download-page {
+    min-height: 100vh;
+
+    background-color: pink;
+}
+
+
+/* Download Hero */
+
+.download-hero {
+    min-height: 500px;
+
+    background-color:#dd6a98;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 4rem 1.5rem;
+}
+
+.download-icon i {
+    font-size: 5rem;
+}
+
+.download-hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+
+    margin: 1.5rem 0 1rem;
+
+    font-weight: 800;
+}
+
+.download-hero p {
+    max-width: 650px;
+
+    line-height: 1.6;
+
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.download-btn {
+    background-color: white;
+
+    color: rgb(228,106,126);
+
+    border: none;
+
+    padding: 0.9rem 1.7rem;
+
+    border-radius: 20rem;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.download-btn:hover {
+    transform: scale(1.05);
+}
+
+.download-btn i {
+    margin-right: 0.5rem;
+}
+
+.small-text {
+    color: white;
+
+    font-size: 0.9rem;
+}
+
+
+/* Devices */
+
+.devices-section {
+    padding: 4rem 5%;
+
+    text-align: center;
+}
+
+.devices-section h2,
+.download-features h2 {
+    font-size: 2rem;
+}
+
+.device-grid {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 1.3rem;
+
+    flex-wrap: wrap;
+
+    margin-top: 2.5rem;
+}
+
+.device-card {
+    width: 300px;
+
+    background-color: rgb(175, 72, 89);
+
+    border-radius: 10px;
+
+    padding: 2.5rem 1.5rem;
+
+    transition: 0.2s;
+}
+
+.device-card:hover {
+    background-color: rgb(175, 72, 89);
+
+    transform: translateY(-7px);
+}
+
+.device-card i {
+    color: white;
+
+    font-size: 3rem;
+
+    margin-bottom: 1.2rem;
+}
+
+.device-card h3 {
+    margin-bottom: 0.7rem;
+    color: white;
+}
+
+.device-card p {
+    color: white;
+
+    font-size: 0.8rem;
+
+    line-height: 1.5;
+
+    min-height: 45px;
+}
+
+.device-card button {
+    margin-top: 1.5rem;
+
+    background-color: white;
+
+    color: rgb(228, 106, 126);
+
+    border: none;
+
+    border-radius: 20rem;
+
+    padding: 0.7rem 1.2rem;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.device-card button:hover {
+    transform: scale(1.04);
+
+    /* background-color: #1fdf64; */
+}
+
+
+/* Download Features */
+
+.download-features {
+    background-color: #dd6a98;
+
+    padding: 4rem 5%;
+
+    text-align: center;
+}
+
+.download-feature-grid {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 2rem;
+
+    flex-wrap: wrap;
+
+    margin-top: 3rem;
+}
+
+.download-feature-grid > div {
+    width: 220px;
+
+    padding: 1.5rem;
+
+    background-color: rgb(180, 63, 82);
+
+    border-radius: 10px;
+
+    transition: 0.2s;
+}
+
+.download-feature-grid > div:hover {
+    background-color: rgb(180, 63, 82);
+
+    transform: translateY(-5px);
+}
+
+.download-feature-grid i {
+    color: white;
+
+    font-size: 2rem;
+
+    margin-bottom: 1rem;
+}
+
+.download-feature-grid h3 {
+    margin-bottom: 0.7rem;
+    color: white;
+}
+
+.download-feature-grid p {
+    color: white;
+
+    font-size: 0.8rem;
+
+    line-height: 1.5;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.page-footer {
+    background-color: black;
+
+    border-top: 1px solid #222;
+
+    padding: 2rem 5%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color:white;
+
+    font-size: 0.75rem;
+}
+
+.page-footer a {
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .help-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .simple-nav-links {
+        gap: 0.7rem;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .simple-nav {
+        padding: 0 0.8rem;
+    }
+
+    .spotify-logo span {
+        display: none;
+    }
+
+    .simple-nav-links a:not(.nav-login) {
+        display: none;
+    }
+
+    .login-card,
+    .signup-card {
+        padding: 2rem 1.3rem;
+    }
+
+    .help-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .premium-hero,
+    .download-hero {
+        min-height: 400px;
+    }
+
+    .plan-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .page-footer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+.spotify-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    text-decoration: none;
+    color: white;
+
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.spotify-logo img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+.download-icon img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+.auth-logo span {
+    font-size: 2.2rem !important;
+    font-weight: 700;
+}
